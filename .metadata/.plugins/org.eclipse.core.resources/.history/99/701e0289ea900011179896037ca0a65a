@@ -1,0 +1,22 @@
+package au.com.dius.sql;
+
+import android.content.Context;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+
+public class ReceiptDataSource {
+	private SQLiteDatabase database;
+	private ReceiptSQLiteHelper sqLiteHelper;
+	
+	public ReceiptDataSource(Context context) {
+		sqLiteHelper = new ReceiptSQLiteHelper(context);
+	}
+
+	public void open() throws SQLException {
+		database = sqLiteHelper.getWritableDatabase();
+	}
+
+	public void close() {
+		sqLiteHelper.close();
+	}
+}

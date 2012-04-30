@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ExpenseItActivity!</string>
+    <string name="app_name">Expenseit</string>
+    
+    <string name="client_prompt">Choose a planet</string>
+    <string-array name="client_array">
+        <item>Jemena</item>
+        <item>IQ Group</item>
+        <item>Westfield</item>
+        <item>ResMed</item>
+        <item>AusPost</item>
+        <item>EBS</item>
+        <item>DiUS</item>
+    </string-array>
+</resources>

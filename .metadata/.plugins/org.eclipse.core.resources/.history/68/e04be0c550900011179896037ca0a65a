@@ -1,0 +1,7 @@
+package au.com.dius;
+
+import Activity;
+
+public class SettingsActivity extends Activity {
+
+}

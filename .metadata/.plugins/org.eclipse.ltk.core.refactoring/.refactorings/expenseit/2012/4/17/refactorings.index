@@ -1,0 +1,15 @@
+1335521558837	Rename type 'ExpenseItActivity'
+1335580479902	Rename type 'ReceiptActivity'
+1335580676888	Extract local variable 'addReceiptButton'
+1335584516474	Convert local variable 'spinner' to field
+1335584593633	Convert local variable 'clientSpinner' to field
+1335584620671	Rename local variable 'adapter'
+1335584629670	Rename local variable 'adapter'
+1335584825508	Convert local variable 'datePicker' to field
+1335584872505	Convert local variable 'amountTextView' to field
+1335585579232	Extract local variable 'saveButton'
+1335585896456	Rename local variable 'c'
+1335586067805	Rename local variable 'calendar'
+1335608690171	Convert local variable 'adapter' to field
+1335609122028	Extract local variable 'listView'
+1335609537259	Delete element

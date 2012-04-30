@@ -1,0 +1,21 @@
+package au.com.dius.model;
+
+import java.util.List;
+
+import com.google.gson.Gson;
+
+public class Expense {
+	private String name;
+	private List<Receipt> receipts;
+	
+	public Expense(String name, List<Receipt> receipts) {
+		super();
+		this.name = name;
+		this.receipts = receipts;
+	}
+
+	public String serialize() {
+		Gson gson = new Gson();
+		return gson.toJson(this);
+	}
+}

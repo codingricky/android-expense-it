@@ -1,0 +1,12 @@
+package au.com.dius.model;
+
+import java.util.List;
+
+public class ReceiptJSONSerializer {
+
+	public static String serialize(List<Receipt> receipts) {
+		for (Receipt receipt : receipts) {
+			
+		}
+	}
+}

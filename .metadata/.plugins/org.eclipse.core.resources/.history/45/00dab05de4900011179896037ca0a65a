@@ -1,0 +1,30 @@
+package au.com.dius;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+public class ReceiptDetailActivity extends Activity {
+
+	private Spinner clientSpinner;
+    private Spinner categorySpinner;
+
+	public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.receiptdetail);
+        
+        clientSpinner = (Spinner) findViewById(R.id.clientSpinner);
+        ArrayAdapter<CharSequence> clientAdapter = ArrayAdapter.createFromResource(
+                this, R.array.client_array, android.R.layout.simple_spinner_item);
+        clientAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        clientSpinner.setAdapter(clientAdapter);
+        
+        categorySpinner = (Spinner) findViewById(R.id.categorySpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.category_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(adapter);
+    }
+}

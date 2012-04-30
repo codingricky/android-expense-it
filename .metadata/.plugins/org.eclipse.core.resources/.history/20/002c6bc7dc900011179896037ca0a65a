@@ -1,0 +1,17 @@
+package au.com.dius;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class ReceiptDetailActivity extends Activity {
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.receipt);
+        
+        Button addReceiptButton = (Button) findViewById(R.id.addReceiptButton);
+        addReceiptButton.setOnClickListener(this);
+    }
+}

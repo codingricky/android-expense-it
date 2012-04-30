@@ -1,0 +1,12 @@
+package au.com.dius.model;
+
+import java.util.Arrays;
+
+import junit.framework.TestCase;
+
+public class ExpenseTest extends TestCase {
+
+	public void testJSONSerialization() {
+		Expense e = new Expense("John Smith", Arrays.asList(receipt1, receipt2));
+	}
+}

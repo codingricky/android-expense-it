@@ -1,0 +1,64 @@
+package au.com.dius;
+
+import java.util.Calendar;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+public class ReceiptDetailActivity extends Activity implements OnClickListener {
+
+	private Spinner clientSpinner;
+    private Spinner categorySpinner;
+	private DatePicker datePicker;
+	private TextView amountTextView;
+
+	public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.receiptdetail);
+        
+        clientSpinner = (Spinner) findViewById(R.id.clientSpinner);
+        ArrayAdapter<CharSequence> clientAdapter = ArrayAdapter.createFromResource(
+                this, R.array.client_array, android.R.layout.simple_spinner_item);
+        clientAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        clientSpinner.setAdapter(clientAdapter);
+        
+        categorySpinner = (Spinner) findViewById(R.id.categorySpinner);
+        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
+                this, R.array.category_array, android.R.layout.simple_spinner_item);
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(categoryAdapter);
+        
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
+        amountTextView = (TextView) findViewById(R.id.amountTextView);
+        
+        Button saveButton = (Button) findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(this);
+    }
+
+	public void onClick(View v) {
+		int day = datePicker.getDayOfMonth();
+		int month = datePicker.getMonth() + 1;
+		int year = datePicker.getYear();
+		
+        final Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.YEAR, year);
+        
+        String amount = amountTextView.getText().toString();
+        int amountInCents = Double.parseDouble(amount) * 100d;
+        
+		Receipt receipt = new Receipt(clientSpinner.getSelectedItem().toString(), 
+				categorySpinner.getSelectedItem().toString(), 
+				calendar.getTime(),
+				amountTextView.getText())
+	}
+}

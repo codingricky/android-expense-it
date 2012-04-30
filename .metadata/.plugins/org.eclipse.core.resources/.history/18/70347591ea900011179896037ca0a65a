@@ -1,0 +1,40 @@
+package au.com.dius.sql;
+
+import android.content.Context;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+
+public class ReceiptDataSource {
+	private SQLiteDatabase database;
+	private ReceiptSQLiteHelper sqLiteHelper;
+	
+	public ReceiptDataSource(Context context) {
+		sqLiteHelper = new ReceiptSQLiteHelper(context);
+	}
+
+	public void open() throws SQLException {
+		database = sqLiteHelper.getWritableDatabase();
+	}
+
+	public void close() {
+		sqLiteHelper.close();
+	}
+//	
+//	public Comment createComment(String comment) {
+//		ContentValues values = new ContentValues();
+//		values.put(MySQLiteHelper.COLUMN_COMMENT, comment);
+//		long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null,
+//				values);
+//		Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
+//				allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+//				null, null, null);
+//		cursor.moveToFirst();
+//		Comment newComment = cursorToComment(cursor);
+//		cursor.close();
+//		return newComment;
+//	}
+	
+	public Receipt createReceipt(Receipt receipt) {
+		
+	}
+}

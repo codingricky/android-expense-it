@@ -1,0 +1,16 @@
+package au.com.dius.model;
+
+public class Expense {
+	private String name;
+	private Receipt[] receipts;
+	
+	public Expense(String name, Receipt[] receipts) {
+		super();
+		this.name = name;
+		this.receipts = receipts;
+	}
+
+	public String serialize() {
+		
+	}
+}

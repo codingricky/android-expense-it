@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;au.com.dius.model.Expense&apos; to &apos;ExpenseTest&apos;&#x0A;- Original project: &apos;expenseit-test&apos;&#x0A;- Original element: &apos;au.com.dius.model.Expense&apos;&#x0A;- Renamed element: &apos;au.com.dius.model.ExpenseTest&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Expense&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;au.com.dius.model{Expense.java[Expense" matchStrategy="1" name="ExpenseTest" qualified="false" references="true" similarDeclarations="false" stamp="1335661273352" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,91 @@
+package au.com.dius;
+
+import java.io.UnsupportedEncodingException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import au.com.dius.model.Expense;
+import au.com.dius.model.Receipt;
+import au.com.dius.sql.ReceiptDataSource;
+
+public class ReceiptListActivity extends Activity implements OnClickListener {
+
+	private ReceiptDataSource receiptDataSource;
+	private ArrayAdapter<Receipt> adapter;
+
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		receiptDataSource = new ReceiptDataSource(this);
+		receiptDataSource.open();
+
+		setContentView(R.layout.receipt);
+
+		adapter = new ArrayAdapter<Receipt>(this, android.R.layout.simple_list_item_1, receiptDataSource.getAllReceipts());
+		ListView listView = (ListView) findViewById(R.id.list);
+		listView.setAdapter(adapter);
+
+		Button addReceiptButton = (Button) findViewById(R.id.addReceiptButton);
+		addReceiptButton.setOnClickListener(this);
+		
+		Button exportReceiptsButton = (Button) findViewById(R.id.exportReceiptsButton);
+		exportReceiptsButton.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				export();
+			}
+		});
+	}
+
+	private void export() {
+		try {
+			DefaultHttpClient client = new DefaultHttpClient();
+			HttpPost post = new HttpPost("http://localhost:4567/expense");
+			post.setHeader("Accept", "application/json");
+			post.setHeader("Content-type", "application/json");
+			
+			Expense expense = new Expense("John Smith", receiptDataSource.getAllReceipts());
+			post.setEntity(new StringEntity(expense.toString()));
+			HttpResponse response = client.execute(post);
+			Log.d("ReceiptListActivity", "response received=" + response);
+		} catch (Exception e) {
+			Log.e("ReceiptListActivity", "export failed", e);
+		}
+	}
+
+	public void onClick(View v) {
+		startActivity(new Intent(this, ReceiptDetailActivity.class));
+	}
+
+	@Override
+	protected void onResume() {
+		receiptDataSource.open();
+		adapter.clear();
+
+		for (Receipt receipt : receiptDataSource.getAllReceipts()) {
+			adapter.add(receipt);
+		}
+
+		adapter.notifyDataSetChanged();
+
+		super.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		receiptDataSource.close();
+		super.onPause();
+	}
+}

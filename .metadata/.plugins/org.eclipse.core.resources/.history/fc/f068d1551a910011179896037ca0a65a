@@ -1,0 +1,64 @@
+package au.com.dius.sql;
+
+import java.util.List;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import au.com.dius.model.Receipt;
+
+public class ReceiptDataSource {
+	private SQLiteDatabase database;
+	private ReceiptSQLiteHelper sqLiteHelper;
+	
+	public ReceiptDataSource(Context context) {
+		sqLiteHelper = new ReceiptSQLiteHelper(context);
+	}
+
+	public void open() throws SQLException {
+		database = sqLiteHelper.getWritableDatabase();
+	}
+
+	public void close() {
+		sqLiteHelper.close();
+	}
+	
+	public Receipt createReceipt(Receipt receipt) {
+		ContentValues values = new ContentValues();
+		values.put(ReceiptSQLiteHelper.CATEGORY_COLUMN, receipt.getCategory());
+		values.put(ReceiptSQLiteHelper.CLIENT_COLUMN, receipt.getClient());
+		values.put(ReceiptSQLiteHelper.AMOUNT_IN_CENTS_COLUMN, receipt.getAmountInCents());
+		// TODO
+//		values.put(ReceiptSQLiteHelper.RECEIPT_DATE_COLUMN, receipt.getDate());
+		
+		long insertedId = database.insert(ReceiptSQLiteHelper.TABLE_RECEIPTS, null, values);
+		receipt.setId(insertedId);
+		return receipt;
+	}
+	
+//	public List<Comment> getAllComments() {
+//		List<Comment> comments = new ArrayList<Comment>();
+//
+//		Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
+//				allColumns, null, null, null, null, null);
+//
+//		cursor.moveToFirst();
+//		while (!cursor.isAfterLast()) {
+//			Comment comment = cursorToComment(cursor);
+//			comments.add(comment);
+//			cursor.moveToNext();
+//		}
+//		// Make sure to close the cursor
+//		cursor.close();
+//		return comments;
+//	}
+	
+	public List<Receipt> getAllReceipts() {
+		List<Receipt> receipts = new ArrayList<Receipt>();
+		
+		Cursor cursor = database.query(ReceiptSQLiteHelper.TABLE_RECEIPTS, allColumns, null, null, null, null, null);
+		
+		return receipts;
+	}
+}

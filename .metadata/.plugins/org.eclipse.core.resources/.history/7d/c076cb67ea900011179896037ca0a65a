@@ -1,0 +1,8 @@
+package au.com.dius.sql;
+
+import android.database.sqlite.SQLiteDatabase;
+
+public class ReceiptDataSource {
+	private SQLiteDatabase database;
+	private ReceiptSQLiteHelper sqLiteHelper;
+}

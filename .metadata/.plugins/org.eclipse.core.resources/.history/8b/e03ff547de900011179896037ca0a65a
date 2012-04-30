@@ -1,0 +1,13 @@
+package au.com.dius.model;
+
+import java.util.Date;
+
+public class Receipt {
+	private int id;
+	private String client;
+	private String category;
+	private Date date;
+	private int amountInCents;
+	
+	
+}

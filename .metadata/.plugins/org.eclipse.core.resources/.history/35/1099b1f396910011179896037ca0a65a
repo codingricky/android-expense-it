@@ -1,0 +1,10 @@
+package au.com.dius.model;
+
+public class Expense {
+	private String name;
+	private Receipt[] receipts;
+	
+	public String serialize() {
+		
+	}
+}

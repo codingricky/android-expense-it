@@ -1,0 +1,39 @@
+package au.com.dius.sql;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class ReceiptSQLiteHelper extends SQLiteOpenHelper {
+
+	private static final String NAME = "receipts.db";
+	private static final String DROP_RECEIPTS_TABLE = "drop table if exists receipts";
+	
+	public static final String CLIENT_COLUMN = "client";
+	public static final String CATEGORY_COLUMN = "category";
+	public static final String RECEIPT_DATE_COLUMN = "receiptDate";
+	public static final String AMOUNT_IN_CENTS_COLUMN = "amountInCents";
+	
+	private static final String CREATE_RECEIPTS_TABLE = "create table receipts " +
+			"(receiptId integer primary key autoincrement, " +
+			CLIENT_COLUMN + " text, " +
+			CATEGORY_COLUMN + " text, " +
+			RECEIPT_DATE_COLUMN + " date, " +
+			AMOUNT_IN_CENTS_COLUMN + " integer)";
+	
+	public ReceiptSQLiteHelper(Context context) {
+		super(context, NAME, null, 1);
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		db.execSQL(CREATE_RECEIPTS_TABLE);
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		db.execSQL(DROP_RECEIPTS_TABLE);
+		onCreate(db);
+	}
+
+}
