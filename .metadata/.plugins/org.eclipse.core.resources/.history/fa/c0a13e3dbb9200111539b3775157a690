@@ -20,8 +20,8 @@ public class MainActivity extends TabActivity {
 		intent = new Intent().setClass(this, ReceiptListActivity.class);
 
 		// Initialize a TabSpec for each tab and add it to the TabHost
-		spec = tabHost.newTabSpec("Receipts").setIndicator("Receipts").setContent(intent);
-		spec.setIndicator("Receipts", getResources().getDrawable(R.drawable.icon_receipt_tab));
+		spec = tabHost.newTabSpec("receipts").setIndicator("Receipts").setContent(intent);
+		spec.setIndicator("receiopts", getResources().getDrawable(R.drawable.icon_receipt_tab));
 
 		tabHost.addTab(spec);
 
