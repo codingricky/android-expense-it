@@ -28,8 +28,6 @@ public class MainActivity extends TabActivity {
 		// Do the same for the other tabs
 		intent = new Intent().setClass(this, SettingsActivity.class);
 		spec = tabHost.newTabSpec("settings").setIndicator("Settings").setContent(intent);
-		spec.setIndicator("Settings", getResources().getDrawable(R.drawable.icon_settings_tab));
-
 		tabHost.addTab(spec);
 
 		tabHost.setCurrentTab(2);
