@@ -24,8 +24,6 @@ import au.com.dius.sql.ReceiptDataSource;
 
 public class ReceiptDetailActivity extends Activity {
 
-	private static final String TAG = "ReceiptDetailActivity";
-
 	private static final int ACTIVITY_SELECT_IMAGE = 0;
 
 	private static final int TAKE_PICTURE = 1;
@@ -191,7 +189,7 @@ public class ReceiptDetailActivity extends Activity {
 		if (outputFileUri != null) {
 			imagePath = outputFileUri.getPath();
 		}
-		Log.d(TAG, "imagePath=" + imagePath);
+		Log.d("au.com.dius.ReceiptDetailActivity", "imagePath=" + imagePath);
 		
 		if (receipt != null) {
 			receipt = new Receipt(receipt.getId(), clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents, descriptionTextView

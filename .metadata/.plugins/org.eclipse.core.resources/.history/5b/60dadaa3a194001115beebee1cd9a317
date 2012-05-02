@@ -1,12 +1,16 @@
 package au.com.dius;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.widget.TextView;
 
 public class SettingsActivity extends PreferenceActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.layout.preferences);
+        TextView textview = new TextView(this);
+        textview.setText("This is the Settings tabs");
+        setContentView(textview);
     }
 }

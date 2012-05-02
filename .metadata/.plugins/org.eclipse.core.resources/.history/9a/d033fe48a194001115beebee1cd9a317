@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+￼Prepared exclusively for Ricky Yim
+Report erratum this copy is (P1.0 printing, December 2008)
+￼￼ADDING SETTINGS 60
+   <CheckBoxPreference
+      android:key="music"
+      android:title="@string/music_title"
+      android:summary="@string/music_summary"
+      android:defaultValue="true" />
+   <CheckBoxPreference
+      android:key="hints"
+      android:title="@string/hints_title"
+      android:summary="@string/hints_summary"
+      android:defaultValue="true" />
+</PreferenceScreen>

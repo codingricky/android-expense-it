@@ -1,7 +1,9 @@
 package au.com.dius;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.widget.TextView;
 
 public class SettingsActivity extends PreferenceActivity {
     public void onCreate(Bundle savedInstanceState) {
