@@ -1,0 +1,7 @@
+package au.com.dius;
+
+import android.widget.ArrayAdapter;
+
+public class ReceiptRowArrayAdapter extends ArrayAdapter<Receipt> {
+
+}

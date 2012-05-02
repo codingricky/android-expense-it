@@ -1,0 +1,36 @@
+package au.com.dius;
+
+import java.util.List;
+
+import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import au.com.dius.model.Receipt;
+
+public class ReceiptRowArrayAdapter extends ArrayAdapter<Receipt> {
+
+	private final List<Receipt> receipts;
+	private final int resource;
+	private final Context context;
+
+	public ReceiptRowArrayAdapter(Context context, int resource, List<Receipt> receipts) {
+		super(context, resource, receipts);
+		this.context = context;
+		this.resource = resource;
+		this.receipts = receipts;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		View row = convertView;
+		Receipt receipt = receipts.get(position)l
+		if (row == null) {
+			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+			row = inflater.inflate(position, parent, false);
+		}
+	}
+
+}

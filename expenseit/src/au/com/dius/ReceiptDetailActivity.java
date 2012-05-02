@@ -22,6 +22,8 @@ public class ReceiptDetailActivity extends Activity {
 	private Spinner categorySpinner;
 	private DatePicker datePicker;
 	private TextView amountTextView;
+	private TextView descriptionTextView;
+	private Receipt receipt;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,7 +45,14 @@ public class ReceiptDetailActivity extends Activity {
 
 		datePicker = (DatePicker) findViewById(R.id.datePicker);
 		amountTextView = (TextView) findViewById(R.id.numberTextView);
+		descriptionTextView = (TextView) findViewById(R.id.descriptionTextView);
 
+		if (getIntent().getExtras() != null) {
+			receipt = (Receipt) getIntent().getExtras().get("au.com.dius.Receipt");
+			mapReceiptToGui();
+		}
+		
+		
 		Button saveButton = (Button) findViewById(R.id.saveButton);
 		saveButton.setOnClickListener(new OnClickListener() {
 
@@ -61,6 +70,26 @@ public class ReceiptDetailActivity extends Activity {
 		});
 	}
 
+	private void mapReceiptToGui() {
+		final Calendar cal = Calendar.getInstance(); 
+		cal.setTime(receipt.getDate());
+		datePicker.updateDate(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+		
+		float amountInDollars = receipt.getAmountInCents()/100f;
+		amountTextView.setText(String.valueOf(amountInDollars));
+
+		setSelectedItem(clientSpinner, receipt.getClient());
+		setSelectedItem(categorySpinner, receipt.getCategory());
+	}
+
+	private void setSelectedItem(Spinner spinner, String item) {
+		for (int i = 0; i < spinner.getAdapter().getCount(); i++) {
+			if (spinner.getAdapter().getItem(i).equals(item)) {
+				spinner.setSelection(i);
+			}
+		}
+	}
+	
 	private void save() {
 		int day = datePicker.getDayOfMonth();
 		int month = datePicker.getMonth();
@@ -74,8 +103,12 @@ public class ReceiptDetailActivity extends Activity {
 		String amount = amountTextView.getText().toString();
 		int amountInCents = (int) (Float.parseFloat(amount) * 100);
 
-		Receipt receipt = new Receipt(clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents);
-		receiptDataSource.createReceipt(receipt);
+		if (receipt != null) {
+			receipt = new Receipt(receipt.getId(), clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents);
+		} else {
+			receipt = new Receipt(clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents);	
+		}
+		receiptDataSource.saveReceipt(receipt);
 		receiptDataSource.close();
 		finish();
 	}

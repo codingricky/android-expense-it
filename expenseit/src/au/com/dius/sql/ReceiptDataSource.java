@@ -37,17 +37,24 @@ public class ReceiptDataSource {
 		sqLiteHelper.close();
 	}
 	
-	public Receipt createReceipt(Receipt receipt) {
+	public Receipt saveReceipt(Receipt receipt) {
 		ContentValues values = new ContentValues();
 		values.put(ReceiptSQLiteHelper.CATEGORY_COLUMN, receipt.getCategory());
 		values.put(ReceiptSQLiteHelper.CLIENT_COLUMN, receipt.getClient());
 		values.put(ReceiptSQLiteHelper.AMOUNT_IN_CENTS_COLUMN, receipt.getAmountInCents());
 		values.put(ReceiptSQLiteHelper.RECEIPT_DATE_COLUMN, dateFormat.format(receipt.getDate()));
 		
-		long insertedId = database.insert(ReceiptSQLiteHelper.TABLE_RECEIPTS, null, values);
-		receipt.setId(insertedId);
+		boolean isUpdate = receipt.getId() > -1;
+		if (isUpdate) {
+			database.update(ReceiptSQLiteHelper.TABLE_RECEIPTS, values, ReceiptSQLiteHelper.ID_COLUMN + "=?", new String[]{String.valueOf(receipt.getId())});	
+		} else {
+			long insertedId = database.insert(ReceiptSQLiteHelper.TABLE_RECEIPTS, null, values);
+			receipt.setId(insertedId);	
+		}
 		return receipt;
+		
 	}
+
 	
 	public List<Receipt> getAllReceipts() {
 		List<Receipt> receipts = new ArrayList<Receipt>();
@@ -55,7 +62,7 @@ public class ReceiptDataSource {
 		Cursor cursor = null;
 		
 		try {
-			cursor = database.query(ReceiptSQLiteHelper.TABLE_RECEIPTS, ReceiptSQLiteHelper.ALL_COLUMNS, null, null, null, null, null);	
+			cursor = database.query(ReceiptSQLiteHelper.TABLE_RECEIPTS, ReceiptSQLiteHelper.ALL_COLUMNS, null, null, null, null, ReceiptSQLiteHelper.RECEIPT_DATE_COLUMN + " desc");	
 			cursor.moveToFirst();
 			while (!cursor.isAfterLast()) {
 				Receipt receipt = createReceiptFromCursor(cursor);

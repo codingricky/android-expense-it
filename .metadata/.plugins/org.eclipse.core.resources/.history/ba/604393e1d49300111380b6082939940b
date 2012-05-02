@@ -1,0 +1,29 @@
+package au.com.dius;
+
+import java.util.List;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import au.com.dius.model.Receipt;
+
+public class ReceiptRowArrayAdapter extends ArrayAdapter<Receipt> {
+
+	private final List<Receipt> receipts;
+
+	public ReceiptRowArrayAdapter(Context context, int resource, List<Receipt> receipts) {
+		super(context, resource, receipts);
+		this.receipts = receipts;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		return super.getView(position, convertView, parent);
+	}
+	
+	
+	
+
+}

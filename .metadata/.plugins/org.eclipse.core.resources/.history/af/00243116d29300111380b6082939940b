@@ -1,0 +1,13 @@
+package au.com.dius;
+
+import android.content.Context;
+import android.widget.ArrayAdapter;
+import au.com.dius.model.Receipt;
+
+public class ReceiptRowArrayAdapter extends ArrayAdapter<Receipt> {
+
+	public ReceiptRowArrayAdapter(Context context, int resource, int textViewResourceId) {
+		super(context, resource, textViewResourceId);
+	}
+
+}

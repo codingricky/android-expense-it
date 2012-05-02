@@ -1,0 +1,118 @@
+package au.com.dius;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import au.com.dius.model.Expense;
+import au.com.dius.model.Receipt;
+import au.com.dius.sql.ReceiptDataSource;
+
+public class ReceiptListActivity extends Activity implements OnClickListener {
+
+	private static final String TAG = "ReceiptListActivity";
+	private ReceiptDataSource receiptDataSource;
+	private ArrayAdapter<Receipt> adapter;
+
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		receiptDataSource = new ReceiptDataSource(this);
+		receiptDataSource.open();
+
+		setContentView(R.layout.receipt);
+
+		adapter = new ArrayAdapter<Receipt>(this, android.R.layout.simple_list_item_1, receiptDataSource.getAllReceipts());
+		ListView listView = (ListView) findViewById(R.id.list);
+		listView.setAdapter(adapter);
+
+		Button addReceiptButton = (Button) findViewById(R.id.addReceiptButton);
+		addReceiptButton.setOnClickListener(this);
+		
+		Button exportReceiptsButton = (Button) findViewById(R.id.exportReceiptsButton);
+		exportReceiptsButton.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				export();
+			}
+		});
+	}
+
+	private void export() {
+		try {
+			
+            Intent intent = new Intent(this, CaptureSignature.class); 
+            startActivity(intent);
+
+			DefaultHttpClient client = new DefaultHttpClient();
+			HttpPost post = new HttpPost("http://192.168.1.9:4567/excel");
+			post.setHeader("Accept", "application/json");
+			post.setHeader("Content-type", "application/json");
+			
+			Expense expense = new Expense("John Smith", receiptDataSource.getAllReceipts());
+			post.setEntity(new StringEntity(expense.serialize()));
+			HttpResponse response = client.execute(post);
+			Log.d(TAG, "response received=" + response);
+			
+			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+		    File file = new File(path, "expenses.xls");
+		    Log.d(TAG, "path=" + file.getAbsolutePath());
+	        path.mkdirs();
+	        file.createNewFile();
+	        OutputStream os = new FileOutputStream(file);
+	        response.getEntity().writeTo(os);
+	        os.close();
+	        
+	        
+	        Intent email = new Intent(Intent.ACTION_SEND);
+	    	email.putExtra(Intent.EXTRA_EMAIL, new String[]{"ricky@dius.com.au"});		  
+	    	email.putExtra(Intent.EXTRA_SUBJECT, "Expenses");
+	    	email.putExtra(Intent.EXTRA_TEXT, "Please find attached my expenses:");
+	    	email.setType("message/rfc822");
+	    	email.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+	    	startActivity(Intent.createChooser(email, "Choose an Email client :"));
+	        
+		} catch (Exception e) {
+			Log.e(TAG, "export failed", e);
+		}
+	}
+
+	public void onClick(View v) {
+		startActivity(new Intent(this, ReceiptDetailActivity.class));
+	}
+
+	@Override
+	protected void onResume() {
+		receiptDataSource.open();
+		adapter.clear();
+
+		for (Receipt receipt : receiptDataSource.getAllReceipts()) {
+			adapter.add(receipt);
+		}
+
+		adapter.notifyDataSetChanged();
+
+		super.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		receiptDataSource.close();
+		super.onPause();
+	}
+}

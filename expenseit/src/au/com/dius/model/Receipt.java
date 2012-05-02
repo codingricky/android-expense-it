@@ -1,14 +1,16 @@
 package au.com.dius.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Receipt {
+public class Receipt implements Serializable {
 	
-	private long id;
+	private long id = -1;
 	private String client;
 	private String category;
 	private Date date;
 	private int amountInCents;
+	private String description;
 
 	public Receipt(String client, String category, Date date, int amountInCents) {
 		this.client = client;
