@@ -108,3 +108,195 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2012-05-02 17:09:33.539
 !MESSAGE Unable to update index for nexus.public|http://cabs-nexus.local:9081/nexus/content/groups/public.releases
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:30.331
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:30.332
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:30.634
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:30.635
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:33.454
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:33.455
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:34.984
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:34.984
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:36.124
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:36.125
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:37.045
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:37.046
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:38.845
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:38.845
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:40.615
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:40.615
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:42.110
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:42.110
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:44.992
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:44.992
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:46.452
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:46.452
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:50.461
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:50.461
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:51.756
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:51.756
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:52.581
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:52.581
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:54.190
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:54.191
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:55.676
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:09:55.677
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:02.056
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:02.056
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:02.695
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:02.696
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:15.208
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:15.208
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:16.262
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:16.263
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:17.906
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:17.907
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:18.542
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:18.542
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:20.723
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:20.723
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:21.154
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:21.154
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:21.515
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:21.515
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:21.873
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:21.873
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:22.237
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:22.238
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:22.579
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:22.580
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:23.048
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:23.049
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:23.441
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:23.446
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:23.823
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:23.824
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:24.209
+!MESSAGE receiptdetail.xml: You must supply a layout_width attribute.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:24.209
+!MESSAGE receiptdetail.xml: You must supply a layout_height attribute.

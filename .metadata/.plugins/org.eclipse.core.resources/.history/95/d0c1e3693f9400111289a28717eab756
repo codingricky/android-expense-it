@@ -80,8 +80,6 @@ public class ReceiptDetailActivity extends Activity {
 
 		setSelectedItem(clientSpinner, receipt.getClient());
 		setSelectedItem(categorySpinner, receipt.getCategory());
-		
-		descriptionTextView.setText(receipt.getDescription());
 	}
 
 	private void setSelectedItem(Spinner spinner, String item) {

@@ -12,21 +12,19 @@ public class Receipt implements Serializable {
 	private int amountInCents;
 	private String description;
 
-	public Receipt(String client, String category, Date date, int amountInCents, String description) {
+	public Receipt(String client, String category, Date date, int amountInCents) {
 		this.client = client;
 		this.category = category;
 		this.date = date;
 		this.amountInCents = amountInCents;
-		this.description = description;
 	}
 
-	public Receipt(long id, String client, String category, Date date, int amountInCents, String description) {
+	public Receipt(long id, String client, String category, Date date, int amountInCents) {
 		this.id = id;
 		this.client = client;
 		this.category = category;
 		this.date = date;
 		this.amountInCents = amountInCents;
-		this.description = description;
 	}
 
 	public long getId() {
@@ -55,9 +53,5 @@ public class Receipt implements Serializable {
 
 	public String toString() {
 		return client + " " + category + " " + amountInCents + " " + date;
-	}
-
-	public String getDescription() {
-		return description;
 	}
 }

@@ -29,7 +29,7 @@ public class ReceiptSQLiteHelper extends SQLiteOpenHelper {
 			AMOUNT_IN_CENTS_COLUMN + " integer)";
 	
 	public ReceiptSQLiteHelper(Context context) {
-		super(context, NAME, null, 3);
+		super(context, NAME, null, 2);
 	}
 
 	@Override

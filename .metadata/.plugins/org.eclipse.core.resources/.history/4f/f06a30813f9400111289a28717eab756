@@ -43,7 +43,7 @@ public class ReceiptDataSource {
 		values.put(ReceiptSQLiteHelper.CLIENT_COLUMN, receipt.getClient());
 		values.put(ReceiptSQLiteHelper.AMOUNT_IN_CENTS_COLUMN, receipt.getAmountInCents());
 		values.put(ReceiptSQLiteHelper.RECEIPT_DATE_COLUMN, dateFormat.format(receipt.getDate()));
-		values.put(ReceiptSQLiteHelper.DESCRIPTION_COLUMN, receipt.getDescription());
+		values.put(ReceiptSQLiteHelper.RECEIPT_DATE_COLUMN, receipt.getDescription());
 		
 		boolean isUpdate = receipt.getId() > -1;
 		if (isUpdate) {
@@ -86,9 +86,8 @@ public class ReceiptDataSource {
 		String category = cursor.getString(2);
 		String date = cursor.getString(3);
 		int amount = cursor.getInt(4);
-		String description = cursor.getString(5);
 		
-		return new Receipt(receiptId, client, category, parseDate(date), amount, description);
+		return new Receipt(receiptId, client, category, parseDate(date), amount);
 	}
 	
 	private Date parseDate(String date) {

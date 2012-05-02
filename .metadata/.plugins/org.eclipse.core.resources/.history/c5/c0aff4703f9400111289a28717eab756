@@ -56,8 +56,4 @@ public class Receipt implements Serializable {
 	public String toString() {
 		return client + " " + category + " " + amountInCents + " " + date;
 	}
-
-	public String getDescription() {
-		return description;
-	}
 }

@@ -85,8 +85,8 @@ public class ReceiptDataSource {
 		String client = cursor.getString(1);
 		String category = cursor.getString(2);
 		String date = cursor.getString(3);
-		int amount = cursor.getInt(4);
-		String description = cursor.getString(5);
+		String description = cursor.getString(4);
+		int amount = cursor.getInt(5);
 		
 		return new Receipt(receiptId, client, category, parseDate(date), amount, description);
 	}

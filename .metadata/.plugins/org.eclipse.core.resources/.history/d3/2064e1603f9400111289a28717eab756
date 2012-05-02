@@ -80,8 +80,6 @@ public class ReceiptDetailActivity extends Activity {
 
 		setSelectedItem(clientSpinner, receipt.getClient());
 		setSelectedItem(categorySpinner, receipt.getCategory());
-		
-		descriptionTextView.setText(receipt.getDescription());
 	}
 
 	private void setSelectedItem(Spinner spinner, String item) {
@@ -106,9 +104,9 @@ public class ReceiptDetailActivity extends Activity {
 		int amountInCents = (int) (Float.parseFloat(amount) * 100);
 
 		if (receipt != null) {
-			receipt = new Receipt(receipt.getId(), clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents, descriptionTextView.getText().toString());
+			receipt = new Receipt(receipt.getId(), clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents);
 		} else {
-			receipt = new Receipt(clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents, descriptionTextView.getText().toString());	
+			receipt = new Receipt(clientSpinner.getSelectedItem().toString(), categorySpinner.getSelectedItem().toString(), enteredDate.getTime(), amountInCents);	
 		}
 		receiptDataSource.saveReceipt(receipt);
 		receiptDataSource.close();
