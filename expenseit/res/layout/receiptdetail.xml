@@ -67,7 +67,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel" />
+
+        <Button
+            android:id="@+id/attachImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/saveButton"
+            android:text="Attach Image" />
+
+        <Button
+            android:id="@+id/photoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/attachImageButton"
+            android:text="Take Photo" />
+
+        <ImageView
+            android:id="@+id/photoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/attachImageButton"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/attachImageButton"
+            android:layout_marginLeft="17dp"
+            android:layout_toLeftOf="@+id/saveButton"
+            android:src="@drawable/receipt" />
         
     </RelativeLayout>
-
+    
+    
 </LinearLayout>

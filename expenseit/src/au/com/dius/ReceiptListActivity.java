@@ -9,6 +9,7 @@ import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,23 +61,7 @@ public class ReceiptListActivity extends Activity {
 	}
 
 	private void export() {
-		try {
-			DefaultHttpClient client = new DefaultHttpClient();
-			HttpPost post = new HttpPost("http://expenseitserver.heroku.com/expense");
-			post.setHeader("Accept", "application/json");
-			post.setHeader("Content-type", "application/json");
-			
-			Expense expense = new Expense("John Smith", receiptDataSource.getAllReceipts());
-			post.setEntity(new StringEntity(expense.serialize()));
-			HttpResponse response = client.execute(post);
-			String id = EntityUtils.toString(response.getEntity());
-			Log.d(TAG, "response received=" + id);
-			
-			HttpGet excelGet = new HttpGet("http://expenseitserver.heroku.com/expense/" + id + "/email/ricky@dius.com.au");
-			client.execute(excelGet);
-		} catch (Exception e) {
-			Log.e(TAG, "export failed", e);
-		}
+		new PostReceiptTask().execute(1L);
 	}
 
 	@Override
@@ -99,5 +84,28 @@ public class ReceiptListActivity extends Activity {
 		super.onPause();
 	}
 	
-	
+	 private class PostReceiptTask extends AsyncTask<Long, Long, Long> {
+
+		@Override
+		protected Long doInBackground(Long... params) {
+			try {
+				DefaultHttpClient client = new DefaultHttpClient();
+				HttpPost post = new HttpPost("http://expenseitserver.heroku.com/expense");
+				post.setHeader("Accept", "application/json");
+				post.setHeader("Content-type", "application/json");
+				
+				Expense expense = new Expense("John Smith", receiptDataSource.getAllReceipts());
+				post.setEntity(new StringEntity(expense.serialize()));
+				HttpResponse response = client.execute(post);
+				String id = EntityUtils.toString(response.getEntity());
+				Log.d(TAG, "response received=" + id);
+				
+//				HttpGet excelGet = new HttpGet("http://expenseitserver.heroku.com/expense/" + id + "/email/ricky@dius.com.au");
+//				client.execute(excelGet);
+			} catch (Exception e) {
+				Log.e(TAG, "export failed", e);
+			}
+			return null;
+		}
+	 }
 }

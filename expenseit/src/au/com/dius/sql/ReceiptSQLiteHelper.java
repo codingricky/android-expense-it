@@ -15,8 +15,9 @@ public class ReceiptSQLiteHelper extends SQLiteOpenHelper {
 	public static final String RECEIPT_DATE_COLUMN = "receiptDate";
 	public static final String AMOUNT_IN_CENTS_COLUMN = "amountInCents";
 	public static final String DESCRIPTION_COLUMN = "description";
+	public static final String IMAGE_PATH_COLUMN = "imagePath";
 	
-	public static final String[] ALL_COLUMNS = {ID_COLUMN, CLIENT_COLUMN, CATEGORY_COLUMN, RECEIPT_DATE_COLUMN, AMOUNT_IN_CENTS_COLUMN, DESCRIPTION_COLUMN};
+	public static final String[] ALL_COLUMNS = {ID_COLUMN, CLIENT_COLUMN, CATEGORY_COLUMN, RECEIPT_DATE_COLUMN, AMOUNT_IN_CENTS_COLUMN, DESCRIPTION_COLUMN, IMAGE_PATH_COLUMN};
 	
 	public static final String TABLE_RECEIPTS = "receipts";
 	
@@ -26,10 +27,11 @@ public class ReceiptSQLiteHelper extends SQLiteOpenHelper {
 			CATEGORY_COLUMN + " text, " +
 			RECEIPT_DATE_COLUMN + " text, " +
 			DESCRIPTION_COLUMN + " text, " +
+			IMAGE_PATH_COLUMN + " text, " +
 			AMOUNT_IN_CENTS_COLUMN + " integer)";
 	
 	public ReceiptSQLiteHelper(Context context) {
-		super(context, NAME, null, 3);
+		super(context, NAME, null, 4);
 	}
 
 	@Override

@@ -300,3 +300,33 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:10:24.209
 !MESSAGE receiptdetail.xml: You must supply a layout_height attribute.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-05-02 20:38:02.967
+!MESSAGE No command output when running: 'am start -n au.com.dius/au.com.dius.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER' on device emulator-5554
+!STACK 0
+com.android.ddmlib.ShellCommandUnresponsiveException
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:408)
+	at com.android.ddmlib.Device.executeShellCommand(Device.java:364)
+	at com.android.ide.eclipse.adt.internal.launch.ActivityLaunchAction.doLaunchAction(ActivityLaunchAction.java:74)
+	at com.android.ide.eclipse.adt.internal.launch.AndroidLaunchController.launchApp(AndroidLaunchController.java:1198)
+	at com.android.ide.eclipse.adt.internal.launch.AndroidLaunchController.clientChanged(AndroidLaunchController.java:1548)
+	at com.android.ddmlib.AndroidDebugBridge.clientChanged(AndroidDebugBridge.java:871)
+	at com.android.ddmlib.Device.update(Device.java:489)
+	at com.android.ddmlib.Client.update(Client.java:836)
+	at com.android.ddmlib.HandleAppName.handleAPNM(HandleAppName.java:90)
+	at com.android.ddmlib.HandleAppName.handleChunk(HandleAppName.java:64)
+	at com.android.ddmlib.MonitorThread.callHandler(MonitorThread.java:414)
+	at com.android.ddmlib.MonitorThread.processClientActivity(MonitorThread.java:322)
+	at com.android.ddmlib.MonitorThread.run(MonitorThread.java:263)
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:47:26.075
+!MESSAGE Can't generate preview for @drawable/
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:47:35.627
+!MESSAGE Can't generate preview for @drawable/
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:47:47.180
+!MESSAGE Can't generate preview for @drawable/
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:50:06.418
+!MESSAGE Can't generate preview for @drawable/

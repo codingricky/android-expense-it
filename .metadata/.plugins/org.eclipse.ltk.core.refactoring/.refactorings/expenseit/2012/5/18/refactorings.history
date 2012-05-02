@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;file&apos; from expression &apos;new File(receipt.getImagePath())&apos;&#x0A;- Original project: &apos;expenseit&apos;&#x0A;- Variable name: &apos;file&apos;&#x0A;- Destination method: &apos;au.com.dius.ReceiptDetailActivity.mapReceiptToGui()&apos;&#x0A;- Variable expression: &apos;new File(receipt.getImagePath())&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;file&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;au.com.dius{ReceiptDetailActivity.java" name="file" replace="true" selection="4929 32" stamp="1335957239116" version="1.0"/>
+</session>

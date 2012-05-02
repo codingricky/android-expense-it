@@ -1,0 +1,14 @@
+package au.com.dius.model;
+
+public class ReceiptImage {
+
+	private final String image;
+
+	public ReceiptImage(String image) {
+		this.image = image;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+}

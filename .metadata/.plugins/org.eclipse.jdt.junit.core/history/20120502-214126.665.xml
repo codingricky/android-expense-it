@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="ExpenseTest (1)" project="expenseit-test" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="au.com.dius.model.ExpenseTest" time="0.155">
+    <testcase name="testJSONSerialization" classname="au.com.dius.model.ExpenseTest" time="0.155">
+      <error>java.lang.IllegalStateException&#13;
+at com.google.gson.stream.JsonWriter.name(JsonWriter.java:338)&#13;
+at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.write(ReflectiveTypeAdapterFactory.java:199)&#13;
+at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(TypeAdapterRuntimeTypeWrapper.java:68)&#13;
+at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.write(CollectionTypeAdapterFactory.java:96)&#13;
+at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.write(CollectionTypeAdapterFactory.java:60)&#13;
+at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(TypeAdapterRuntimeTypeWrapper.java:68)&#13;
+at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.write(ReflectiveTypeAdapterFactory.java:89)&#13;
+at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.write(ReflectiveTypeAdapterFactory.java:200)&#13;
+at com.google.gson.Gson.toJson(Gson.java:546)&#13;
+at com.google.gson.Gson.toJson(Gson.java:525)&#13;
+at com.google.gson.Gson.toJson(Gson.java:480)&#13;
+at com.google.gson.Gson.toJson(Gson.java:460)&#13;
+at au.com.dius.model.Expense.serialize(Expense.java:95)&#13;
+at au.com.dius.model.ExpenseTest.testJSONSerialization(ExpenseTest.java:20)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:537)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1551)&#13;
+
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

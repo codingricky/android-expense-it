@@ -11,22 +11,28 @@ public class Receipt implements Serializable {
 	private Date date;
 	private int amountInCents;
 	private String description;
+	private String imagePath;
+	private ReceiptImage image;
 
-	public Receipt(String client, String category, Date date, int amountInCents, String description) {
+	public Receipt(String client, String category, Date date, int amountInCents, String description, String imagePath) {
 		this.client = client;
 		this.category = category;
 		this.date = date;
 		this.amountInCents = amountInCents;
 		this.description = description;
+		this.imagePath = imagePath;
+		this.image = new ReceiptImage(imagePath);
 	}
 
-	public Receipt(long id, String client, String category, Date date, int amountInCents, String description) {
+	public Receipt(long id, String client, String category, Date date, int amountInCents, String description, String imagePath) {
 		this.id = id;
 		this.client = client;
 		this.category = category;
 		this.date = date;
 		this.amountInCents = amountInCents;
 		this.description = description;
+		this.imagePath = imagePath;
+		this.image = new ReceiptImage(imagePath);
 	}
 
 	public long getId() {
@@ -59,5 +65,9 @@ public class Receipt implements Serializable {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public String getImagePath() {
+		return imagePath;
 	}
 }
