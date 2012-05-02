@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="au.com.dius.ReceiptActivity"/>
-<fullyQualifiedTypeName name="au.com.dius.SettingsActivity"/>
-<fullyQualifiedTypeName name="android.app.TabActivity"/>
-<fullyQualifiedTypeName name="android.widget.TableLayout"/>
-<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="android.content.Intent"/>
-<fullyQualifiedTypeName name="android.widget.DatePicker"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.database.SQLException"/>
-<fullyQualifiedTypeName name="android.content.ContentValues"/>
-<fullyQualifiedTypeName name="au.com.dius.sql.ReceiptDataSource"/>
-<fullyQualifiedTypeName name="au.com.dius.sql.ReceiptSQLiteHelper"/>
 <fullyQualifiedTypeName name="android.database.Cursor"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
@@ -37,15 +24,11 @@
 <fullyQualifiedTypeName name="org.apache.http.client.methods.HttpPost"/>
 <fullyQualifiedTypeName name="au.com.dius.model.Expense"/>
 <fullyQualifiedTypeName name="org.apache.http.entity.StringEntity"/>
-<fullyQualifiedTypeName name="android.os.Environment"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 <fullyQualifiedTypeName name="android.media.MediaScannerConnection"/>
 <fullyQualifiedTypeName name="android.net.Uri"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="org.apache.http.client.methods.HttpGet"/>
 <fullyQualifiedTypeName name="android.net.ParseException"/>
 <fullyQualifiedTypeName name="org.apache.http.util.EntityUtils"/>
@@ -57,7 +40,24 @@
 <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="au.com.dius.ReceiptRowArrayAdapter"/>
 <fullyQualifiedTypeName name="au.com.dius.R.layout"/>
-<fullyQualifiedTypeName name="au.com.dius.R.id"/>
 <fullyQualifiedTypeName name="android.graphics.drawable.Drawable"/>
 <fullyQualifiedTypeName name="au.com.dius.R.drawable"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="au.com.dius.R.id"/>
+<fullyQualifiedTypeName name="au.com.dius.R.string"/>
+<fullyQualifiedTypeName name="au.com.dius.sql.ReceiptSQLiteHelper"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.provider.MediaStore"/>
+<fullyQualifiedTypeName name="android.os.Environment"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="au.com.dius.model.ReceiptImage"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="android.util.Base64"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="au.com.dius.ReceiptListActivity.PostReceiptTask"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
 </qualifiedTypeNameHistroy>

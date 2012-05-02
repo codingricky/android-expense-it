@@ -330,3 +330,64 @@ com.android.ddmlib.ShellCommandUnresponsiveException
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2012-05-02 20:50:06.418
 !MESSAGE Can't generate preview for @drawable/
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:00.177
+!MESSAGE System property http.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:00.179
+!MESSAGE System property http.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:00.179
+!MESSAGE System property https.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:00.179
+!MESSAGE System property https.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:01.163
+!MESSAGE System property http.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:01.163
+!MESSAGE System property http.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:01.164
+!MESSAGE System property https.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:01.164
+!MESSAGE System property https.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.682
+!MESSAGE System property http.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.682
+!MESSAGE System property http.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.682
+!MESSAGE System property https.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.684
+!MESSAGE System property https.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.685
+!MESSAGE System property http.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.685
+!MESSAGE System property http.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.686
+!MESSAGE System property https.proxyHost has been set to  by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:16:43.686
+!MESSAGE System property https.proxyPort has been set to  by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-05-02 22:40:50.587 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_31
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/ricky/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/ricky/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-05-02 22:41:14.371
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2012-05-02 22:43:36.963
+!MESSAGE Unable to update index for nexus.public|http://cabs-nexus.local:9081/nexus/content/groups/public.releases

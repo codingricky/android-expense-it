@@ -41,7 +41,6 @@ public class ReceiptRowArrayAdapter extends ArrayAdapter<Receipt> {
 		convertView = inflater.inflate(resource, null);
 		ImageView imageView = (ImageView) convertView.findViewById(R.id.imageReceiptRow);
 		imageView.setImageResource(R.drawable.receipt);
-		imageView.setTag(receipt);
 		imageView.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {

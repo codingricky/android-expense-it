@@ -38,7 +38,6 @@ public class ReceiptDetailActivity extends Activity {
 	private ImageView photoImageView;
 	private Receipt receipt;
 	private Uri outputFileUri;
-	
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -121,7 +120,7 @@ public class ReceiptDetailActivity extends Activity {
 		super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
 		if (requestCode == ACTIVITY_SELECT_IMAGE && resultCode == RESULT_OK) {
-			outputFileUri = Uri.fromFile(new File(getPath(imageReturnedIntent.getData())));
+			outputFileUri = imageReturnedIntent.getData();
 			photoImageView.setImageURI(outputFileUri);
 		} else if (requestCode == TAKE_PICTURE && resultCode == RESULT_OK) {
 			Log.d("takePhoto", "photo taken");
@@ -131,7 +130,7 @@ public class ReceiptDetailActivity extends Activity {
 		}
 	}
 
-	private String getPath(Uri uri) {
+	public String getPath(Uri uri) {
 		String[] projection = { MediaStore.Images.Media.DATA };
 		Cursor cursor = managedQuery(uri, projection, null, null, null);
 		if (cursor != null) {
@@ -187,7 +186,7 @@ public class ReceiptDetailActivity extends Activity {
 
 		String imagePath = "";
 		if (outputFileUri != null) {
-			imagePath = outputFileUri.getPath();
+			imagePath = outputFileUri.();
 		}
 		Log.d("au.com.dius.ReceiptDetailActivity", "imagePath=" + imagePath);
 		
