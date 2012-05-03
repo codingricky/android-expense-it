@@ -1,22 +1,26 @@
 package au.com.dius;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 import au.com.dius.model.Expense;
 import au.com.dius.model.Receipt;
 import au.com.dius.sql.ReceiptDataSource;
@@ -26,6 +30,7 @@ public class ReceiptListActivity extends Activity {
 	private static final String TAG = "ReceiptListActivity";
 	private ReceiptDataSource receiptDataSource;
 	private ArrayAdapter<Receipt> adapter;
+	private ProgressDialog dialog;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,7 +66,11 @@ public class ReceiptListActivity extends Activity {
 	}
 
 	private void export() {
-		new PostReceiptTask().execute(1L);
+	    dialog = ProgressDialog.show(ReceiptListActivity.this, "", "Exporting Please wait...", true);
+
+	    String name = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("nameChoice", "");
+		Expense expense = new Expense(name, receiptDataSource.getAllReceipts());
+		new PostExpenseTask().execute(expense);
 	}
 
 	@Override
@@ -84,17 +93,18 @@ public class ReceiptListActivity extends Activity {
 		super.onPause();
 	}
 	
-	 private class PostReceiptTask extends AsyncTask<Long, Long, Long> {
+	 private class PostExpenseTask extends AsyncTask<Expense, Void, Boolean> {
 
 		@Override
-		protected Long doInBackground(Long... params) {
+		protected Boolean doInBackground(Expense... params) {
+
 			try {
+				Expense expense = params[0];
 				DefaultHttpClient client = new DefaultHttpClient();
 				HttpPost post = new HttpPost("http://expenseitserver.heroku.com/expense");
 				post.setHeader("Accept", "application/json");
 				post.setHeader("Content-type", "application/json");
 				
-				Expense expense = new Expense("John Smith", receiptDataSource.getAllReceipts());
 				post.setEntity(new StringEntity(expense.serialize()));
 				HttpResponse response = client.execute(post);
 				String id = EntityUtils.toString(response.getEntity());
@@ -104,8 +114,28 @@ public class ReceiptListActivity extends Activity {
 //				client.execute(excelGet);
 			} catch (Exception e) {
 				Log.e(TAG, "export failed", e);
+				return false;
 			}
-			return null;
+			return true;
 		}
+
+		@Override
+		protected void onPostExecute(Boolean result) {
+			if (dialog != null) {	
+				dialog.dismiss();
+			}
+			
+			if (result) {
+				Context context = getApplicationContext();
+				CharSequence text = "Export finished";
+				int duration = Toast.LENGTH_SHORT;
+				
+				Toast toast = Toast.makeText(context, text, duration);
+				toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+				toast.show();				
+			}
+		}
+		
+		
 	 }
 }
